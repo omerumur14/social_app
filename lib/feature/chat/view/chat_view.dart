@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_app/product/widgets/appbar/bottom_appbar.dart';
 import 'package:social_app/product/widgets/buttons/elevated_button.dart';
 
 @RoutePage()
@@ -62,13 +61,15 @@ class _ChatViewState extends State<ChatView> {
           ),
         ],
       ),
-      bottomNavigationBar: const CustomBottomAppBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.white,
         shape: const CircleBorder(),
         child: SvgPicture.asset('assets/icon/vector.svg'),
+      ),
+      body: const Center(
+        child: Text('Chat Sayfası'),
       ),
     );
   }

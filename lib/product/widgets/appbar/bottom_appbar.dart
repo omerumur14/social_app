@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:social_app/product/navigation/app_router.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
   const CustomBottomAppBar({super.key});
@@ -34,7 +36,9 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.router.push(const ProfileRoute());
+              },
               icon: SvgPicture.asset(
                 'assets/icon/user.svg',
               ),

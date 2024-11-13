@@ -84,3 +84,22 @@ class ProfileRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [UserView]
+class UserRoute extends PageRouteInfo<void> {
+  const UserRoute({List<PageRouteInfo>? children})
+      : super(
+          UserRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UserRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UserView();
+    },
+  );
+}

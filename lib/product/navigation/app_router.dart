@@ -3,6 +3,7 @@ import 'package:social_app/feature/chat/view/chat_view.dart';
 import 'package:social_app/feature/home/view/home_view.dart';
 import 'package:social_app/feature/notification/view/notification_view.dart';
 import 'package:social_app/feature/profile/view/profile_view.dart';
+import 'package:social_app/feature/user/view/user_view.dart';
 
 part 'app_router.gr.dart';
 
@@ -17,5 +18,6 @@ final class AppRouter extends RootStackRouter {
         AutoRoute(page: ChatRoute.page),
         AutoRoute(page: ProfileRoute.page),
         AutoRoute(page: NotificationRoute.page),
+        AutoRoute(page: UserRoute.page),
       ];
 }

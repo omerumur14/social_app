@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StoryButton extends StatefulWidget {
-  const StoryButton(
-      {super.key, this.image, required this.name, required this.isYou});
+  const StoryButton({
+    super.key,
+    this.image,
+    required this.name,
+    required this.isYou,
+  });
   final Widget? image;
   final String name;
   final bool isYou;

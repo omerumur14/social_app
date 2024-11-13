@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomHomeCard extends StatefulWidget {
   const CustomHomeCard({
     super.key,
+    required this.onTap,
     required this.profileImage,
     required this.postImage,
     required this.name,
@@ -13,6 +14,7 @@ class CustomHomeCard extends StatefulWidget {
     required this.comment,
     required this.like,
   });
+  final VoidCallback onTap;
   final String profileImage;
   final String postImage;
   final String name;
@@ -38,48 +40,51 @@ class _CustomHomeCardState extends State<CustomHomeCard> {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 44,
-                    height: 44,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: Image.asset(
-                        widget.profileImage,
-                        width: 36,
-                        height: 36,
+              child: InkWell(
+                onTap: widget.onTap,
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 44,
+                      height: 44,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
+                          widget.profileImage,
+                          width: 36,
+                          height: 36,
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.name,
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.poppins(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: -0.41,
-                              color: Colors.black),
-                        ),
-                        Text(
-                          widget.userName,
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.poppins(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            letterSpacing: -0.41,
-                            color: const Color.fromARGB(255, 108, 122, 156),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.name,
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.poppins(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: -0.41,
+                                color: Colors.black),
                           ),
-                        ),
-                      ],
+                          Text(
+                            widget.userName,
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: -0.41,
+                              color: const Color.fromARGB(255, 108, 122, 156),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             ClipRRect(
